@@ -73,7 +73,7 @@ module SeoHelper
 
     # will also append current page number and the site name
     def set_page_title(title)
-      if params[:page]
+      if params[:page] && params[:page].to_i > 1
         @page_title = SeoHelper.format_current_page(title, params[:page])
       else
         @page_title = title
