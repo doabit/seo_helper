@@ -11,10 +11,13 @@ module SeoHelper
     attr_accessor :pagination_formatter
     attr_accessor :site_name_formatter
 
+    attr_accessor :separator
+
     def initialize
       # Set default site_name according to the Rails application class name
       self.site_name    = ::Rails.application.class.to_s.split("::").first
       self.skip_blank   = true
+      self.separator    = ' - '
 
       self.default_page_description = ""
       self.default_page_keywords    = ""
